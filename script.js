@@ -1,0 +1,2 @@
+document.querySelectorAll('.count').forEach(el=>{let end=+el.dataset.target,suffix=el.dataset.suffix||'',n=0,step=Math.max(1,Math.ceil(end/35));let t=setInterval(()=>{n=Math.min(end,n+step);el.textContent=n+suffix;if(n>=end)clearInterval(t)},35)});
+function filterPubs(year,btn){document.querySelectorAll('.filterbar button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');document.querySelectorAll('.pub-card').forEach(p=>p.style.display=(year==='all'||p.dataset.year===year)?'block':'none')}
